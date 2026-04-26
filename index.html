@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventaire de Carrière · Irina Talbot</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --terra: #A84020;
+  --terra-dark: #78280E;
+  --terra-light: #D8AB90;
+  --cream: #FAF6F0;
+  --cream-mid: #F2E2D4;
+  --border: #DDD0C4;
+  --text: #2C2C2C;
+  --muted: #6B6B6B;
+}
+
+/* Pour caviarder les noms de clients : décommenter la règle ci-dessous */
+/* .client-name { background: #2C2C2C; color: #2C2C2C; border-radius: 2px; } */
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  font-size: clamp(10pt, 2vw, 11.5pt);
+  color: var(--text);
+  max-width: 960px;
+  margin: 0 auto;
+  padding: clamp(20px, 4vw, 44px) clamp(16px, 4vw, 36px);
+  line-height: 1.85;
+  background: #fff;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: var(--terra);
+  font-size: clamp(16pt, 3vw, 20pt);
+  font-weight: 700;
+  border-bottom: 2px solid var(--terra-light);
+  padding-bottom: 8px;
+  margin: 56px 0 22px 0;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: var(--terra-dark);
+  font-size: clamp(12pt, 2.5vw, 14.5pt);
+  font-weight: 600;
+  margin: 32px 0 14px 0;
+}
+
+h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--terra);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 16px 0 8px 0;
+}
+
+p { margin: 9px 0; }
+.muted { color: var(--muted); font-style: italic; font-size: 9.5pt; }
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 48px 0 40px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 48px;
+}
+.hero-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 9.5pt;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+.hero-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(24pt, 5vw, 34pt);
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 12px 0;
+  line-height: 1.1;
+}
+.hero-meta { color: var(--muted); font-size: 10pt; margin: 5px 0; }
+.hero-disclaimer {
+  margin-top: 16px;
+  color: var(--terra-dark);
+  font-style: italic;
+  font-size: 9pt;
+}
+.linkedin-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 7px 20px;
+  border: 1px solid var(--terra);
+  border-radius: 4px;
+  color: var(--terra);
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s;
+}
+.linkedin-btn:hover {
+  background: var(--terra);
+  color: white;
+}
+
+/* BANNER */
+.banner {
+  background: var(--terra-dark);
+  color: white;
+  padding: 22px 28px;
+  border-radius: 6px;
+  margin: 0 0 28px 0;
+  line-height: 1.75;
+}
+.banner p { margin: 0 0 8px 0; }
+.banner p:last-child { margin: 0; }
+.banner strong { font-family: 'Cormorant Garamond', serif; font-size: 13pt; }
+.banner em { font-style: italic; opacity: 0.85; font-size: 10pt; }
+
+/* GRID */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-bottom: 20px; }
+
+/* CARD */
+.card { border: 1px solid var(--border); border-radius: 6px; padding: 20px 22px; }
+.card-cream { background: var(--cream); }
+.card-mid { background: var(--cream-mid); }
+.card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11.5pt;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--terra);
+  margin-top: 0;
+}
+
+/* CAPTION */
+.caption {
+  background: var(--cream-mid);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--terra-light);
+  font-style: italic;
+  color: var(--muted);
+  font-size: 9.5pt;
+  padding: 14px 18px;
+  border-radius: 0 4px 4px 0;
+  margin: 0 0 22px 0;
+  line-height: 1.7;
+}
+
+/* QUOTE */
+.quote {
+  background: var(--cream);
+  border-left: 4px solid var(--terra-light);
+  padding: 16px 20px;
+  border-radius: 0 4px 4px 0;
+  margin-bottom: 14px;
+  font-style: italic;
+}
+.quote .source {
+  font-style: normal;
+  color: var(--muted);
+  font-size: 9.5pt;
+  margin-top: 8px;
+  display: block;
+}
+
+/* EXAMPLE BLOCK */
+.example-block {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+.example-block h3 {
+  margin-top: 0;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11.5pt;
+  color: var(--terra);
+}
+
+/* CONFIDENTIAL */
+.confidential {
+  background: var(--terra-dark);
+  color: white;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 6px;
+  margin-bottom: 22px;
+  font-size: 9.5pt;
+}
+
+/* LIST */
+ul.clean { list-style: none; padding: 0; margin: 10px 0; }
+ul.clean li { padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+ul.clean li::before { content: '\25B8'; color: var(--terra); position: absolute; left: 2px; top: 6px; font-size: 9pt; }
+ul.clean li.check::before { content: '\2713'; top: 6px; }
+ul.clean li.cross::before { content: '\2717'; color: #888; top: 6px; }
+
+/* CAREER ROADMAP */
+.career-roadmap {
+  position: relative;
+  padding-left: 30px;
+  margin: 22px 0 32px;
+}
+.career-roadmap::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--terra), var(--terra-light), transparent);
+}
+.cr-phase {
+  position: relative;
+  margin-bottom: 18px;
+}
+.cr-phase::before {
+  content: '';
+  position: absolute;
+  left: -27px;
+  top: 10px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--terra);
+  box-shadow: 0 0 0 3px white, 0 0 0 5px var(--terra-light);
+}
+.cr-year {
+  font-family: 'Lato', sans-serif;
+  font-size: 8pt;
+  font-weight: 700;
+  color: var(--terra);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+.cr-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--terra-light);
+  border-radius: 0 5px 5px 0;
+  padding: 12px 16px;
+}
+.cr-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12.5pt;
+  font-weight: 700;
+  color: var(--terra-dark);
+  margin: 0 0 5px;
+}
+.cr-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 8px;
+}
+.cr-tag {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2px 9px;
+  font-size: 8pt;
+  color: var(--muted);
+}
+
+/* BENEV GRID */
+.benev-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 16px 0 26px;
+}
+.benev-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--terra-light);
+  border-radius: 0 0 6px 6px;
+  padding: 14px 16px;
+}
+.benev-period {
+  font-family: 'Lato', sans-serif;
+  font-size: 8pt;
+  font-weight: 700;
+  color: var(--terra);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.benev-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11.5pt;
+  font-weight: 700;
+  color: var(--terra-dark);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.benev-card p {
+  font-size: 9.5pt;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.65;
+}
+
+/* TABLE STD */
+table.std { width: 100%; border-collapse: collapse; margin-bottom: 22px; font-size: 10pt; }
+table.std th { background: var(--terra); color: white; font-weight: 700; text-align: left; padding: 10px 16px; }
+table.std td { border: 1px solid var(--border); padding: 9px 14px; vertical-align: top; }
+table.std tr:nth-child(even) td { background: var(--cream); }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* VALUES GRID */
+.values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 20px 0; }
+.value-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--terra-light);
+  padding: 16px 14px 14px;
+  border-radius: 0 0 6px 6px;
+}
+.value-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 12pt; color: var(--terra-dark); margin: 0 0 8px 0; font-weight: 700; }
+.value-card p { font-size: 9.5pt; color: var(--muted); margin: 0; line-height: 1.55; }
+
+/* DISC */
+.disc-wrap { margin: 18px 0 12px 0; }
+.disc-row { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.disc-letter { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 15pt; color: var(--terra); width: 22px; flex-shrink: 0; line-height: 1; }
+.disc-name { font-size: 9pt; color: var(--muted); width: 76px; flex-shrink: 0; }
+.disc-track { flex: 1; background: var(--border); border-radius: 3px; height: 12px; min-width: 60px; }
+.disc-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--terra), var(--terra-dark)); }
+.disc-val { font-weight: 700; font-size: 9.5pt; color: var(--terra); width: 44px; text-align: right; flex-shrink: 0; }
+.disc-styles { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 22px; }
+.disc-style-card { background: var(--cream); border: 1px solid var(--border); border-top: 3px solid var(--terra-light); padding: 16px; border-radius: 0 0 6px 6px; }
+.disc-style-card h4 { font-family: 'Cormorant Garamond', serif; color: var(--muted); font-size: 9pt; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 4px 0; font-weight: 400; }
+.disc-style-card .style-val { font-family: 'Cormorant Garamond', serif; font-size: 13pt; font-weight: 700; color: var(--terra); }
+.disc-style-card .style-sub { font-size: 9pt; color: var(--muted); }
+
+/* STRESS */
+.stress-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 18px 0 22px 0; }
+.stress-card { padding: 18px 20px; }
+.stress-card h4 { font-family: 'Cormorant Garamond', serif; color: var(--terra); margin: 0 0 10px 0; font-size: 11.5pt; font-weight: 700; }
+.stress-card p { margin: 0; font-size: 9.5pt; line-height: 1.65; }
+.s1 { background: var(--cream); }
+.s2 { background: var(--cream-mid); }
+.s3 { background: var(--terra-light); }
+
+/* SKILL DOMAINS */
+.skill-domains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 22px 0 30px 0; }
+.skill-domain { background: var(--cream); border: 1px solid var(--border); border-top: 3px solid var(--terra-light); padding: 16px 16px 14px; border-radius: 0 0 6px 6px; }
+.skill-domain h4 { font-family: 'Cormorant Garamond', serif; font-size: 12pt; font-weight: 700; color: var(--terra-dark); margin: 0 0 8px 0; }
+.skill-domain .certs { font-size: 8.5pt; color: var(--muted); line-height: 1.65; }
+
+/* HORIZONS ROADMAP */
+.horizons { display: grid; grid-template-columns: 1fr 32px 1fr 32px 1fr; align-items: start; margin: 22px 0 28px 0; }
+.horizon-card { background: var(--cream); border: 1px solid var(--border); border-top: 3px solid var(--terra-light); border-radius: 0 0 6px 6px; padding: 18px 16px; }
+.horizon-card .horizon-num { font-family: 'Lato', sans-serif; font-size: 8pt; color: var(--muted); text-transform: uppercase; letter-spacing: 0.09em; margin: 0 0 6px 0; }
+.horizon-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 13.5pt; font-weight: 700; color: var(--terra); margin: 0 0 8px 0; line-height: 1.2; }
+.horizon-card p { font-size: 9.5pt; color: var(--text); margin: 0; line-height: 1.65; }
+.horizon-arrow { display: flex; align-items: flex-start; justify-content: center; padding-top: 38px; color: var(--terra-light); font-size: 20pt; font-weight: 300; }
+
+/* CLIENT NAMES */
+.client-name { }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 52px 0; }
+.footer { text-align: center; color: var(--muted); font-style: italic; font-size: 9pt; }
+
+/* RESPONSIVE - TABLET */
+@media (max-width: 768px) {
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .skill-domains { grid-template-columns: 1fr 1fr; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+  .benev-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* RESPONSIVE - MOBILE */
+@media (max-width: 640px) {
+  .grid-2, .disc-styles, .stress-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+  .grid-3, .skill-domains { grid-template-columns: 1fr; }
+  .horizons { grid-template-columns: 1fr; }
+  .horizon-arrow { display: none; }
+  .benev-grid { grid-template-columns: 1fr; }
+  .cr-tags { gap: 4px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-title">Inventaire de Carrière</p>
+  <p class="hero-name">Irina Talbot</p>
+  <p class="hero-meta">Management et leadership humain &nbsp;&middot;&nbsp; Profil senior &nbsp;&middot;&nbsp; 16 ans d'expérience IT</p>
+  <p class="hero-meta">Document de travail &nbsp;&middot;&nbsp; Avril 2026</p>
+  <a href="https://www.linkedin.com/in/irinatalbot35/" target="_blank" class="linkedin-btn">LinkedIn : irinatalbot35</a>
+  <p class="hero-disclaimer">Ce document est une base de travail vivante, construite au fil des sessions de mentorat.</p>
+</div>
+
+<!-- CAP STRATEGIQUE -->
+<div class="banner">
+  <p><strong>Cap stratégique</strong></p>
+  <p>Experte fonctionnelle IT senior, 16 ans d'expérience en <strong>CRM/CX et architecture fonctionnelle</strong>. Ma trajectoire vise le <strong>management d'équipe opérationnel chez le client final</strong>, en DSI de préférence. Une ESN reste envisageable, si la culture managériale, la politique handicap et le feedback ascendant sont réellement au rendez-vous.</p>
+  <p>Ce qui me caractérise : comprendre en profondeur le travail de mes équipes pour les faire grandir. Relire un livrable, donner un feedback concret, challenger une approche, aider quelqu'un à progresser. Un ancrage terrain délibéré, au service du management, pas en substitution.</p>
+  <p><em>Légitimité managériale : 7 collaborateurs en gestion directe complète, coordination d'équipes projet jusqu'à 15 personnes, pilotage du plan de formation pour environ 60 personnes en multi-sites.</em></p>
+</div>
+
+<!-- SYNTHESE -->
+<h1>Synthèse</h1>
+
+<div class="grid-2">
+  <div class="card card-cream">
+    <h3>Ce que j'apporte</h3>
+    <ul class="clean">
+      <li>CRM/CX : Zendesk Support Admin Expert I &middot; Dynamics 365 CRM &amp; Contact Center &middot; Genesys &middot; Vocalcom</li>
+      <li>Architecture fonctionnelle &middot; LeanIX BTM et APM &middot; AWS CCP</li>
+      <li>Gestion de projet : Cycle en V &middot; Agile PSM I et PSPO I &middot; PRINCE2</li>
+      <li>Management de proximité : structuration d'équipe, accompagnement de la montée en compétence, sécurisation du delivery, pilotage humain et opérationnel</li>
+      <li>Process Com® certifiée &middot; Trilingue FR / RU / EN &middot; TOEIC 965</li>
+      <li>Leadership servant &middot; Facilitation &middot; Coaching, validés par feedback 360°</li>
+    </ul>
+  </div>
+  <div class="card card-cream">
+    <h3>Ce que je cherche</h3>
+    <ul class="clean">
+      <li>Postes : Manager IT &middot; Delivery Manager &middot; Head of CX &middot; Responsable MOA/MOE</li>
+      <li>Profil player-manager &middot; Jusqu'à 10 collaborateurs directs</li>
+      <li>DSI ou direction métier, chez le client final de préférence. ESN envisageable si la culture managériale, la politique handicap et le feedback ascendant sont réels</li>
+      <li>Grands groupes (critère stratégique RQTH)</li>
+      <li>Secteurs : transport, luxe, industrie, retail, tech, ESS, santé &middot; Banque/assurance envisageable si télétravail complet possible</li>
+      <li class="cross">Exclu : secteur public &middot; Armement / secret défense</li>
+    </ul>
+  </div>
+</div>
+
+<div class="grid-3">
+  <div class="card card-cream">
+    <h3>Filtres non négociables</h3>
+    <ul class="clean">
+      <li>Pas de flex-office &middot; Zone de travail fixe (RQTH)</li>
+      <li>Télétravail flexible &middot; sans jours imposés à l'avance, sans quota mensuel, sans interdiction en période d'essai</li>
+      <li>1 déplacement national maximum par mois</li>
+      <li>Accord handicap actif et réel</li>
+      <li>Package mutuelle et prévoyance de qualité</li>
+      <li>Place de parking dédiée</li>
+    </ul>
+  </div>
+  <div class="card card-cream">
+    <h3>Préférences</h3>
+    <p class="muted" style="font-size:9pt;margin-bottom:8px;">Négociables si le poste et le salaire sont très bons</p>
+    <ul class="clean">
+      <li>Bureau nominativement attribué (nom, affaires permanentes)</li>
+      <li>Environnement calme : bureau fermé ou partagé avec très peu de personnes</li>
+      <li>Semaine de 4 jours ou temps partiel à 80 %</li>
+    </ul>
+  </div>
+  <div class="card card-cream">
+    <h3>Timing et rémunération</h3>
+    <ul class="clean">
+      <li>Actuellement chez CGI, départ post-rétablissement 2026, voire 2027</li>
+      <li>Sortie construite, pas une fuite</li>
+      <li>Gap intentionnel de 1 à 2 mois avant la recherche active</li>
+      <li><strong>65 000 € brut/an minimum, non négociable</strong> &middot; Coefficient 170 SYNTEC minimum si applicable</li>
+      <li>Horizon 2-4 ans : Manager de managers / Directrice adjointe DSI</li>
+    </ul>
+  </div>
+</div>
+
+<div class="caption">Le télétravail flexible est une question de confiance. À ce niveau de poste, soit la confiance est accordée, soit elle ne l'est pas. L'absence de confiance signale une culture managériale incompatible. Dans tous les cas, la médecine du travail peut supplanter tout avenant contractuel restrictif.</div>
+
+<div class="quote">
+  <p>"Manager de proximité assuré avec conviction et dynamisme. Son leadership est réel."</p>
+  <p>"Elle sait faire bouger les choses et embarquer ses équipes comme son management."</p>
+  <p>"Elle laisse de la liberté à ses équipes, tout en gardant une vision claire."</p>
+  <span class="source">Extraits de recommandations professionnelles</span>
+</div>
+
+<!-- PARCOURS -->
+<h1>1 &middot; Parcours et fil conducteur</h1>
+
+<p>Seize ans d'expérience IT, dont neuf en ESN, principalement chez CGI à Cesson-Sévigné (depuis avril 2018). Deux ans chez Orange Business Services (2020-2022), consacrés à l'architecture d'entreprise et à LeanIX. Secteurs d'intervention : agroalimentaire, transport, luxe et cosmétique, services B2B, industrie, retail, banque/assurance.</p>
+
+<div class="career-roadmap">
+
+  <div class="cr-phase">
+    <div class="cr-year">2008 - 2010</div>
+    <div class="cr-card">
+      <div class="cr-title">IUT de Vannes &middot; Assistante de scolarité et de bureau universitaire (BU)</div>
+      <p>Soutien administratif au service scolarité et à la bibliothèque universitaire. Coordination des vacataires lors des inscriptions estivales.</p>
+      <p style="margin-top:10px;"><strong>Formation en parallèle &middot; DUT Informatique</strong></p>
+      <ul style="margin:4px 0 6px 0;padding-left:20px;line-height:1.75;">
+        <li>Stage de développement en C++ : avril-juin 2008 (dans le cadre du DUT)</li>
+        <li>Césure, puis session de partiels repassée en avril 2010</li>
+        <li>DUT Informatique obtenu en 2010</li>
+      </ul>
+      <div class="cr-tags">
+        <span class="cr-tag">Administration</span>
+        <span class="cr-tag">Coordination</span>
+        <span class="cr-tag">DUT Informatique</span>
+        <span class="cr-tag">Développement C++</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cr-phase">
+    <div class="cr-year">2010 - 2014</div>
+    <div class="cr-card">
+      <div class="cr-title">Dis'info &middot; Technicienne support IT et encadrement opérationnel</div>
+      <p>Support technique des clients professionnels sur deux comptes simultanés, par voix et par mail. Diagnostic, suivi et résolution des incidents.</p>
+
+      <p style="margin-top:10px;"><strong>Groupement des Mousquetaires</strong> &middot; 3 500 points de vente &middot; 6 enseignes</p>
+      <ul style="margin:4px 0 6px 0;padding-left:20px;line-height:1.75;">
+        <li>Maintenance réseaux point de vente, bureautique, logiciels métier, monétique et matériel (PC et encaissement)</li>
+      </ul>
+
+      <p style="margin-top:6px;"><strong>Gras Savoye</strong> &middot; plus de 3 000 collaborateurs</p>
+      <ul style="margin:4px 0 6px 0;padding-left:20px;line-height:1.75;">
+        <li>Mise en place du service client informatique avec une équipe de 3 personnes</li>
+        <li>Élaboration des process et de la base de connaissances</li>
+      </ul>
+
+      <p style="margin-top:6px;"><strong>Responsabilités transverses</strong></p>
+      <ul style="margin:4px 0 6px 0;padding-left:20px;line-height:1.75;">
+        <li>Gestion des insatisfactions</li>
+        <li>Formation des nouveaux collaborateurs</li>
+        <li>Enrichissement et réorganisation des bases de connaissances</li>
+      </ul>
+      <p class="muted" style="font-size:9pt;margin-top:6px;">Outils : BMC Remedy &middot; GLPI &middot; Lotus 8.5 &middot; Outlook 2010/13 &middot; MS Office/O365 &middot; TeamViewer &middot; LogMeIn</p>
+      <div class="cr-tags">
+        <span class="cr-tag">Support IT</span>
+        <span class="cr-tag">Ticketing</span>
+        <span class="cr-tag">Formation</span>
+        <span class="cr-tag">Base de connaissances</span>
+        <span class="cr-tag">Multi-clients</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cr-phase">
+    <div class="cr-year">2015 - 2017</div>
+    <div class="cr-card">
+      <div class="cr-title">Biocoop SA &middot; Technicienne support utilisateur</div>
+      <p>Support utilisateurs sur les plateformes et au siège (télémaintenance et interventions sur site). Gestion complète du parc matériel : achat, installation, maintenance et paramétrage.</p>
+      <ul style="margin:6px 0 4px 0;padding-left:20px;line-height:1.75;">
+        <li>Administration des systèmes : Windows Server 2k8/2k12, Citrix, VMware</li>
+        <li>Gestion de la téléphonie IP (Alcatel OmniVista 4760)</li>
+        <li>Gestion des comptes utilisateurs, sauvegardes et espaces de stockage</li>
+        <li>Paramétrage des outils de sécurité : anti-virus, anti-spam, VPN</li>
+        <li>Supervision (Centreon, Cacti) &middot; Ticketing, stock et inventaire (GLPI, Fusion Inventory)</li>
+        <li>Rédaction de procédures &middot; Bonnes pratiques ITIL &middot; Habilitation électrique H0/BE Manoeuvre</li>
+      </ul>
+      <div class="cr-tags">
+        <span class="cr-tag">Support SI</span>
+        <span class="cr-tag">Administration systèmes</span>
+        <span class="cr-tag">MCO</span>
+        <span class="cr-tag">ITIL</span>
+        <span class="cr-tag">Biocoop SA</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cr-phase">
+    <div class="cr-year">2017 - 2020</div>
+    <div class="cr-card">
+      <div class="cr-title">Reprise d'études MIAGE &middot; Entrée chez CGI (avr. 2018) &middot; Missions CX et WFM</div>
+      <p>Reprise d'études à 29 ans en parallèle de l'activité professionnelle : Licence MIAGE (2018), Master MIAGE mention Bien (2020), Université de Rennes 1. Entrée chez CGI Cesson-Sévigné en avril 2018.</p>
+      <p style="margin-top:8px;">Missions CGI menées pendant cette période :</p>
+      <ul style="margin:6px 0 4px 0;padding-left:20px;line-height:1.75;">
+        <li><strong>Crédit Agricole 44</strong> &middot; Scrum Master, puis Product Owner sur un projet d’application de dataviz Big Data pour un centre de contacts &middot; Secteur banque-assurance.</li>
+        <li><strong>Fortuneo</strong> &middot; Audit WFM : compréhension de l'existant, interviews métier, vérification conformité et risques RH. Rapport d'audit complet avec recommandations d'implémentation du progiciel Peopleware (ex-Injixo) et proposition d'architecture.</li>
+      </ul>
+      <div class="cr-tags">
+        <span class="cr-tag">MIAGE</span>
+        <span class="cr-tag">CX</span>
+        <span class="cr-tag">WFM</span>
+        <span class="cr-tag">Architecture fonctionnelle</span>
+        <span class="cr-tag">Agile</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cr-phase">
+    <div class="cr-year">2020 - 2022</div>
+    <div class="cr-card">
+      <div class="cr-title">Orange Business Services &middot; Architecte fonctionnelle</div>
+      <p>Architecture d'entreprise, cartographie applicative, LeanIX, conduite du changement. Pilotage Agile et cycle en V.</p>
+      <p style="margin-top:8px;">Clients : <span class="client-name">Conseil Régional de Bretagne</span> &middot; <span class="client-name">Orange groupe</span> &middot; <span class="client-name">Bosch</span></p>
+      <div class="cr-tags">
+        <span class="cr-tag">Architecture d'entreprise</span>
+        <span class="cr-tag">LeanIX</span>
+        <span class="cr-tag">Cartographie applicative</span>
+        <span class="cr-tag">Conduite du changement</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cr-phase">
+    <div class="cr-year">2022 - 2026</div>
+    <div class="cr-card">
+      <div class="cr-title">CGI Cesson-Sévigné &middot; Management et chefferie de projet CX/CRM</div>
+
+      <p><strong>Team Leader adjointe &middot; 7 collaborateurs en gestion directe complète</strong></p>
+      <ul style="margin:4px 0 8px 0;padding-left:20px;line-height:1.75;">
+        <li>Responsabilité carrière, évaluation de performance et accompagnement quotidien</li>
+      </ul>
+
+      <p><strong>Mission transverse &middot; Pilotage du plan de formation &middot; Centre de compétences Rennes-Tours (~60 personnes)</strong></p>
+      <ul style="margin:4px 0 8px 0;padding-left:20px;line-height:1.75;">
+        <li>Arbitrage entre besoins collaborateurs et priorités stratégiques CGI</li>
+        <li>Respect du budget imposé &middot; Priorisation des formations à fort impact</li>
+        <li>Suivi individuel et collectif &middot; Conseil aux collaborateurs</li>
+      </ul>
+
+      <p><strong>Chefferie de projet CX/CRM/WFM</strong></p>
+      <p style="margin-top:4px;">Clients (liste non exhaustive) : <span class="client-name">Clarins</span> &middot; <span class="client-name">Kalhyge</span> &middot; <span class="client-name">Innoval</span> &middot; <span class="client-name">Thales</span> &middot; <span class="client-name">Lactalis</span> (11 pays, conduit en anglais) &middot; <span class="client-name">Safran Nacelles</span> &middot; <span class="client-name">BRGM</span></p>
+
+      <div class="cr-tags">
+        <span class="cr-tag">Management direct</span>
+        <span class="cr-tag">Développement des personnes</span>
+        <span class="cr-tag">Pilotage formation</span>
+        <span class="cr-tag">CX/CRM/WFM</span>
+        <span class="cr-tag">Multi-clients</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cr-phase">
+    <div class="cr-year">Fév. - Oct. 2025</div>
+    <div class="cr-card">
+      <div class="cr-title">CGI Cesson-Sévigné &middot; Remplacement du Directeur Conseil Delivery (N+1)</div>
+      <p><em style="color:var(--muted);font-size:9.5pt;">Charge additionnelle portée en parallèle des missions de management et de chefferie de projet, sans allègement du périmètre existant.</em></p>
+      <p style="margin-top:8px;">Remplacement en arrêt maladie longue durée. Participation aux instances stratégiques : CoDir et CoAff (décisions de staffing pour l'ensemble des membres rennais de la Business Team CCaaS).</p>
+      <ul style="margin:6px 0 4px 0;padding-left:20px;line-height:1.75;">
+        <li>Pilotage transverse de l'équipe CCaaS (environ 25 personnes)</li>
+        <li>Prise en charge de tâches RH critiques</li>
+        <li>Rôles simultanés : Mental Health Champion et Ambassadrice Handicap</li>
+        <li>Évaluation "Surpasse les attentes" dans la revue de performance annuelle</li>
+      </ul>
+      <div class="cr-tags">
+        <span class="cr-tag">Leadership transverse</span>
+        <span class="cr-tag">Instances stratégiques</span>
+        <span class="cr-tag">Mental Health Champion</span>
+        <span class="cr-tag">Ambassadrice Handicap</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cr-phase">
+    <div class="cr-year">Début 2026 - Aujourd’hui</div>
+    <div class="cr-card">
+      <div class="cr-title">CGI Cesson-Sévigné &middot; AI-Driven CX Transformation Lead</div>
+      <p>J'ai choisi de sortir de la chefferie de projet classique : trop de contraintes croisées (client, management, équipe, budget mal vendu), trop de reporting répétitif, pas assez d'impact réel. Je me positionne sur la <strong>transformation CX augmentée par l'IA</strong>.</p>
+      <p style="margin-top:8px;"><strong>Mission en cours &middot;</strong> <span class="client-name">Keolis</span> : implémentation de Zendesk Copilot en environnement de production, déploiement adapté aux cas d'usage et aux processus internes des différentes filiales.</p>
+      <p style="margin-top:8px;">En parallèle : mentorat professionnel structuré, coachings (carrière, communication), recommandations LinkedIn collectées. Sortie construite, pas une fuite.</p>
+      <div class="cr-tags">
+        <span class="cr-tag">Zendesk Copilot</span>
+        <span class="cr-tag">CX &amp; IA</span>
+        <span class="cr-tag">Transformation</span>
+        <span class="cr-tag">Mentorat actif</span>
+        <span class="cr-tag">Sortie construite</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<h2>Initiatives personnelles et associatives</h2>
+<div class="caption">Engagement, entrepreneuriat et protection féline &middot; Sur plus de dix ans, un fil conducteur cohérent et structurant : piloter des organisations bénévoles, coordonner des équipes sans autorité formelle, construire des partenariats, former et onboarder, améliorer en continu. Les mêmes compétences qu’en entreprise, exercées dans des contextes d’engagement exigeants et à impact réel.</div>
+
+<div class="benev-grid">
+  <div class="benev-card">
+    <div class="benev-period">Sept. 2015 - Mars 2017</div>
+    <div class="benev-role">Les Pachas &middot; Community Manager bénévole</div>
+    <ul style="margin:6px 0 0 0;padding-left:18px;font-size:9.5pt;line-height:1.7;">
+      <li>Croissance organique de la page Facebook : plus de 3 000 abonnés</li>
+      <li>Gestion du blog "Histoires de Pachas" sur WordPress</li>
+      <li>Organisation d'un événement Charity Pot Party en partenariat avec Lush</li>
+      <li>Étude stratégique avec benchmark médias</li>
+    </ul>
+  </div>
+  <div class="benev-card">
+    <div class="benev-period">Mars 2017 - Avr. 2018</div>
+    <div class="benev-role">Les Pachas &middot; Responsable communication et partenariats</div>
+    <ul style="margin:6px 0 0 0;padding-left:18px;font-size:9.5pt;line-height:1.7;">
+      <li>Prospection de partenaires et de donateurs &middot; Partenariat Lilo (moteur de recherche solidaire)</li>
+      <li>Mise en place du teaming &middot; Relations presse</li>
+      <li>Encadrement des Community Managers</li>
+      <li>Coordination et animation de l'équipe bénévole &middot; Réunions mensuelles</li>
+    </ul>
+  </div>
+  <div class="benev-card">
+    <div class="benev-period">Oct. 2019 - Aujourd'hui</div>
+    <div class="benev-role">Moustaches et Compagnie &middot; Famille d'accueil bénévole</div>
+    <ul style="margin:6px 0 0 0;padding-left:18px;font-size:9.5pt;line-height:1.7;">
+      <li>Accueil de chats, soins, socialisation et préparation à l'adoption</li>
+      <li>Référente pour les visites pré-adoption</li>
+      <li>Recrutement de familles d'accueil</li>
+      <li>Élaboration de process pour améliorer l'onboarding des nouveaux bénévoles</li>
+    </ul>
+  </div>
+</div>
+
+<ul class="clean">
+  <li class="check">Fondatrice de <a href="https://miaoucratie.fr" target="_blank" style="color:var(--terra)">Miaoucratie</a> : projet entrepreneurial de cat-sitting, ancré dans plus de 10 ans d'engagement bénévole en protection féline</li>
+  <li class="check">Speaker à Agile Rennes, talks et sessions filmées (<a href="https://sessionize.com/irina-talbot" target="_blank" style="color:var(--terra)">profil Sessionize</a>)</li>
+  <li class="check">Mentore bénévole pour des femmes en reconversion dans la tech (Social Builder, depuis septembre 2025)</li>
+  <li class="check">Mentorée par une PM chez Yeeso : une perspective externe sur mon propre parcours</li>
+</ul>
+
+<h2>Responsabilités institutionnelles chez CGI</h2>
+<div class="caption">J'ai porté ces deux rôles simultanément, dans une période où je gérais déjà le remplacement du N+1, le pilotage transverse de l'équipe CCaaS et le plan de formation. Chacun a nécessité une formation spécifique et une habilitation formelle. Ce niveau de confiance institutionnelle, accordé sur des sujets humainement sensibles, est une preuve concrète de maturité relationnelle, et je l'assume pleinement en entretien.</div>
+
+<div class="grid-2">
+  <div class="card card-cream">
+    <h3>Mental Health Champion</h3>
+    <p>Formée et habilitée à accompagner les salariés en situation de difficulté psychologique, pour les orienter vers les ressources ou interlocuteurs pertinents et les aider à traverser une épreuve, professionnelle ou personnelle.</p>
+    <ul class="clean">
+      <li class="check">Toujours à l'initiative et avec le consentement du salarié</li>
+      <li class="check">Confidentialité absolue</li>
+      <li class="cross">Sans substitution à un professionnel de santé</li>
+    </ul>
+  </div>
+  <div class="card card-cream">
+    <h3>Ambassadrice Handicap</h3>
+    <p>Habilitée à accompagner les salariés qui se questionnent sur les démarches liées à tout type de handicap, les aider à y voir plus clair et les orienter vers les bons interlocuteurs.</p>
+    <ul class="clean">
+      <li class="check">Orientation : MDPH, médecine du travail, RH</li>
+      <li class="check">Promotion des dispositifs de l'accord handicap CGI</li>
+      <li class="check">Approche bienveillante, non injonctive</li>
+    </ul>
+  </div>
+</div>
+
+<!-- HARD SKILLS -->
+<h1>2 &middot; Hard skills</h1>
+<div class="caption">Pas un profil de manager généraliste : une expertise fonctionnelle approfondie dans les domaines pilotés. Cette double compétence, technique et humaine, est un atout concret et différenciant.</div>
+
+<div class="skill-domains">
+  <div class="skill-domain">
+    <h4>Architecture &amp; Cloud</h4>
+    <div class="certs">LeanIX BTP &middot; LeanIX APM<br>AWS Cloud Practitioner<br>Cartographie applicative &middot; Conduite du changement</div>
+  </div>
+  <div class="skill-domain">
+    <h4>Gestion de projet</h4>
+    <div class="certs">Cycle en V &middot; Agile<br>PSM I &middot; PSPO I (Scrum.org)<br>PRINCE2 Foundation &middot; Multi-projets</div>
+  </div>
+  <div class="skill-domain">
+    <h4>CRM / CX / CCaaS</h4>
+    <div class="certs">Zendesk Support Admin Expert I<br>Dynamics 365 CRM &amp; Contact Center<br>Genesys &middot; Vocalcom &middot; Twilio &middot; Efficy<br>POC IA</div>
+  </div>
+  <div class="skill-domain">
+    <h4>WFM</h4>
+    <div class="certs">Peopleware (ex-Injixo)<br>Planification &middot; Prévision<br>Pilotage de capacité</div>
+  </div>
+  <div class="skill-domain">
+    <h4>Management &amp; Facilitation</h4>
+    <div class="certs">Process Com® certifiée<br>Leadership servant &middot; Coaching<br>Plan de formation ~60 pers. (multi-sites)<br>Facilitation Agile</div>
+  </div>
+  <div class="skill-domain">
+    <h4>Langues</h4>
+    <div class="certs">Russe (langue maternelle)<br>Français (bilingue, sans accent)<br>Anglais (TOEIC 965/990)</div>
+  </div>
+  <div class="skill-domain">
+    <h4>Intelligence artificielle</h4>
+    <div class="certs">Zendesk Copilot (production)<br>LLMs : ChatGPT, Claude, Gemini, Grok<br>Notions RAG &middot; Vibe Coding</div>
+  </div>
+</div>
+
+<h2>Architecture et transformation</h2>
+<ul class="clean">
+  <li>Architecture fonctionnelle, conception et cartographie applicative, alignement métier/SI</li>
+  <li>Business Transformation Management, conduite du changement (certifiée LeanIX BTP)</li>
+  <li>Application Portfolio Management avec LeanIX (certifiée)</li>
+  <li>AWS Cloud Practitioner (certifiée)</li>
+</ul>
+
+<h2>Gestion de projet et méthodologie</h2>
+<ul class="clean">
+  <li>Cheffe de projet senior, pilotage multi-clients et multi-projets, Build et Run</li>
+  <li>Cycle en V, maîtrise des deux approches projet</li>
+  <li>Agile / Scrum : PSM I et PSPO I certifiées, facilitation de cérémonies Agile</li>
+  <li>PRINCE2 Foundation (certifiée)</li>
+</ul>
+
+<h2>CRM</h2>
+<ul class="clean">
+  <li>Consultante, architecte fonctionnelle et cheffe de projet CRM</li>
+  <li>Outils : Microsoft Dynamics 365 CRM (certifiée Fundamentals) &middot; Efficy &middot; Zendesk</li>
+  <li>Missions possibles : consultante / Product Owner, architecte fonctionnelle, cheffe de projet</li>
+</ul>
+
+<h2>Customer Experience (CX)</h2>
+<ul class="clean">
+  <li>Design de parcours client, SVI, chatbots</li>
+  <li>Voix du client, pilotage CX, amélioration de l'expérience</li>
+  <li>Compréhension des irritants utilisateurs et métiers</li>
+  <li>Zendesk Support Administrator Expert I (certifiée)</li>
+</ul>
+
+<h2>Workforce Management (WFM)</h2>
+<ul class="clean">
+  <li>Peopleware (ex-Injixo) : planification, prévision, pilotage de capacité</li>
+  <li>Organisation des ressources en centre de contacts</li>
+</ul>
+
+<h2>Progiciels de centres de contacts / CCaaS</h2>
+<ul class="clean">
+  <li>Genesys CCaaS &middot; Vocalcom &middot; Microsoft Dynamics 365 Contact Center &middot; Twilio</li>
+  <li>Capacité d'adaptation rapide à tout type de technologie CRM, CX ou CCaaS/WFM, dès lors que les enjeux métier, les processus et les pain-points utilisateurs sont clairement posés</li>
+</ul>
+
+<h2>IA et automatisation CX</h2>
+<ul class="clean">
+  <li>POC IA : implémentation d'un agent conversationnel dans un chatbot Dynamics 365 Contact Center</li>
+  <li>Implémentation et configuration de Zendesk Copilot en environnement de production (<span class="client-name">Keolis</span>)</li>
+  <li>Capacité à articuler cas d'usage métier, processus internes et outillage IA</li>
+</ul>
+
+<h2>Communication et facilitation</h2>
+<ul class="clean">
+  <li>Process Communication Model (certifiée Process Com®) : adaptation selon les profils de personnalité</li>
+  <li>Facilitation : ateliers Agile, meetups PO (PO Dojo rennais, fondé en 2018-2019, arrêté en raison du Covid)</li>
+</ul>
+
+<h2>Intelligence artificielle et veille technologique</h2>
+<ul class="clean">
+  <li>Veille technologique active sur les LLMs : ChatGPT Enterprise, Claude, Gemini Enterprise, Grok</li>
+  <li>Notions de RAG (Retrieval-Augmented Generation) et de leurs applications métier</li>
+  <li>Pratique du Vibe Coding</li>
+  <li>Outils de design IA génératif : Stitch, Claude Design et autres</li>
+</ul>
+
+<h2>Langues</h2>
+<div class="grid-3">
+  <div class="card card-cream" style="text-align:center;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:13pt;font-weight:700;color:var(--terra)">Russe</div>
+    <div class="muted">Langue maternelle (née en Russie)</div>
+  </div>
+  <div class="card card-cream" style="text-align:center;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:13pt;font-weight:700;color:var(--terra)">Français</div>
+    <div class="muted">Bilingue courant, parlé sans accent (maîtrisé depuis l'adolescence)</div>
+  </div>
+  <div class="card card-cream" style="text-align:center;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:13pt;font-weight:700;color:var(--terra)">Anglais</div>
+    <div class="muted">Professionnel courant (TOEIC 965/990)</div>
+  </div>
+</div>
+<p class="muted" style="margin-top:4px;">Allemand (LV2) et espagnol : notions scolaires.</p>
+
+<h2>Diplômes</h2>
+<div class="table-scroll">
+<table class="std">
+  <tr><th>Diplôme</th><th>Établissement</th><th>Année</th></tr>
+  <tr><td>Master MIAGE, mention Bien</td><td>Université de Rennes 1</td><td>2020</td></tr>
+  <tr><td>Licence MIAGE</td><td>Université de Rennes 1</td><td>2018</td></tr>
+  <tr><td>DUT Informatique</td><td>IUT de Vannes</td><td>2010</td></tr>
+</table>
+</div>
+
+<h2>Certifications</h2>
+<div class="table-scroll">
+<table class="std">
+  <tr><th>Certification</th><th>Organisme</th><th>Date</th></tr>
+  <tr><td>Zendesk Support Administrator Expert I</td><td>Zendesk</td><td>Mai 2022</td></tr>
+  <tr><td>Microsoft Certified : Dynamics 365 Fundamentals (CRM)</td><td>Microsoft</td><td>Fév. 2022</td></tr>
+  <tr><td>Chef de Projet Digital</td><td>26 Academy</td><td>Janv. 2022</td></tr>
+  <tr><td>Process Communication Model (Process Com®)</td><td>Cegos France</td><td>Août 2021</td></tr>
+  <tr><td>AWS Certified Cloud Practitioner</td><td>Amazon Web Services</td><td>Avr. 2021</td></tr>
+  <tr><td>LeanIX Business Transformation Management Partner</td><td>LeanIX</td><td>Mars 2021</td></tr>
+  <tr><td>LeanIX APM Certification</td><td>LeanIX</td><td>Fév. 2021</td></tr>
+  <tr><td>PRINCE2® 6e édition Foundation</td><td>Skills4All</td><td>Avr. 2020</td></tr>
+  <tr><td>Professional Scrum Master I (PSM I)</td><td>Scrum.org</td><td>Avr. 2020</td></tr>
+  <tr><td>Professional Scrum Product Owner I (PSPO I)</td><td>Scrum.org</td><td>Avr. 2020</td></tr>
+  <tr><td>Marketing Digital</td><td>LiveMentor</td><td>Oct. 2016</td></tr>
+</table>
+</div>
+
+<h2>Expériences sectorielles</h2>
+<div class="caption">Un positionnement horizontal : pas une spécialiste d'un secteur, mais une experte CRM/CX applicable dans presque tous les secteurs.</div>
+<ul class="clean">
+  <li>Agroalimentaire et international : <span class="client-name">Lactalis</span> (déploiement multi-pays, conduit en anglais et en russe pour l'Ukraine et le Kazakhstan)</li>
+  <li>Aéronautique : <span class="client-name">Safran Nacelles</span> &middot; Défense et électronique : <span class="client-name">Thales</span> &middot; Transport : <span class="client-name">Keolis</span></li>
+  <li>Luxe et cosmétique : <span class="client-name">Clarins</span> &middot; Services B2B : <span class="client-name">Kalhyge</span> &middot; Sciences de la Terre : <span class="client-name">BRGM</span></li>
+  <li>Agro-agri, industrie, retail, portefeuille ESN multi-clients (liste non exhaustive)</li>
+  <li class="cross">Exclu : secteur public &middot; Armement et secret défense (limite non négociable, double nationalité)</li>
+  <li>Banque/assurance : envisageable si le télétravail complet est garanti</li>
+  <li class="check">Fil conducteur cross-sectoriel : la CRM/CX, présente sur l'ensemble du parcours</li>
+</ul>
+
+<!-- SOFT SKILLS -->
+<h1>3 &middot; Soft skills</h1>
+
+<h2>Leadership et management, validés par feedback 360°</h2>
+<div class="caption">Ces compétences ont été validées par des évaluations 360° en contexte professionnel. Ce ne sont pas des auto-déclarations : ce sont des faits documentés, mobilisables en entretien.</div>
+
+<div class="grid-2">
+  <div class="card card-cream">
+    <ul class="clean">
+      <li class="check"><strong>Leadership servant</strong> : au service de l'équipe, créer les conditions de la réussite collective</li>
+      <li class="check"><strong>People management</strong> : faire grandir les personnes, écouter et s'adapter à chaque profil (renforcé par Process Com)</li>
+      <li class="check"><strong>Facilitation</strong> : animer des ateliers, structurer des réflexions collectives, faire émerger les décisions</li>
+    </ul>
+  </div>
+  <div class="card card-cream">
+    <ul class="clean">
+      <li class="check"><strong>Glue work</strong> : tisser les liens, assurer la cohérence, maintenir le collectif en mouvement</li>
+      <li class="check"><strong>Coaching et accompagnement</strong> : appétence forte et pratique réelle (mentorat, PO Dojo, Serious Game)</li>
+      <li class="check"><strong>Prise de décision</strong> à différents niveaux : équipe projet et direction</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Compétences relationnelles</h2>
+<ul class="clean">
+  <li class="check"><strong>Adaptabilité</strong> : à l'aise dans les environnements changeants, non-routiniers, en transformation</li>
+  <li class="check"><strong>Communication interculturelle</strong> : bilingue russo-française, sensible aux nuances culturelles</li>
+  <li class="check"><strong>Pragmatisme</strong> : solutions concrètes et efficaces, focus sur les résultats</li>
+  <li class="check"><strong>Transparence</strong> : communication ouverte et honnête, favorise la confiance au sein des équipes</li>
+  <li class="check"><strong>Coordination multi-parties prenantes</strong> : coordination efficace sans autorité hiérarchique directe</li>
+</ul>
+
+<h2>Gestion des conflits et assertivité</h2>
+<div class="example-block">
+  <h3>Illustration : projet <span class="client-name">Safran Nacelles</span></h3>
+  <p>Dès mon analyse initiale, j'ai identifié des risques majeurs : spécifications lacunaires, calendrier intenable imposé par le client et la BU, équipe en tension croissante. J'ai adressé une alerte écrite au management, documentant avec précision les risques qualité, calendaires et humains, et sollicité par écrit un renforcement des ressources.</p>
+  <p style="margin-top:10px;">En parallèle, j'ai conduit des entretiens individuels avec le directeur de projet (hiérarchiquement équivalent à un N+1, sans aucune autorité formelle de ma part) pour rétablir une dynamique de travail constructive.</p>
+  <p style="margin-top:10px;">La direction n'a pas retenu mes recommandations. Le projet s'est soldé par des dépassements budgétaires et un litige commercial. Cette expérience illustre ce que signifie le courage managérial dans le feedback ascendant : tenir ses positions face à une pression institutionnelle forte, et protéger son équipe, même sans victoire au bout.</p>
+</div>
+
+<h2>Influence sans autorité hiérarchique</h2>
+<p>Tout au long de mon parcours de cheffe de projet, j'ai coordonné des équipes sans lien hiérarchique direct. La cohésion se construit par la clarté des objectifs, la régularité du lien individuel, la transparence sur les contraintes et la crédibilité technique. Sur le projet <span class="client-name">Safran Nacelles</span>, j'ai géré un directeur de projet en difficulté, sans autorité formelle, tout en tenant les parties prenantes informées, en protégeant l'équipe du crunch, en prévenant le burn-out et en maintenant une dynamique de travail soutenable.</p>
+
+<!-- MODE DE FONCTIONNEMENT -->
+<h1>4 &middot; Mode de fonctionnement au travail</h1>
+<div class="caption">Cette section est utilisable en onboarding, en entretien, ou comme miroir du style managérial. Le principe : manager comme on veut être managé.</div>
+
+<h2>Rythme et style de travail</h2>
+<ul class="clean">
+  <li class="check">Pic d'efficacité en fin d'après-midi, entre 15h30 et 18h30</li>
+  <li class="check">Préférence pour la communication asynchrone (email, Teams, Slack), avec trace écrite. Les réunions oui, mais avec un ordre du jour clair et un compte rendu</li>
+  <li class="check">Traitement de l'information par la lecture et la reformulation personnelle, puis par des questions ciblées : pas de réactions à chaud</li>
+  <li class="check">Fiable, structurée et très autonome dès lors qu'il y a du sens et de la motivation : pas besoin de suivi rapproché</li>
+  <li class="check">Je peux paraître froide ou distante en première impression : c'est de la concentration, pas du désintérêt. Je compense par de l'humour et des moments individuels</li>
+</ul>
+<p class="muted" style="margin-top:14px;">Ces modes de fonctionnement sont mieux éclairés par les profils comportementaux détaillés plus bas : <a href="#disc" style="color:var(--terra);text-decoration:none;">Profil DISC</a> et <a href="#processcom" style="color:var(--terra);text-decoration:none;">Process Communication Model</a>.</p>
+
+<div class="grid-2">
+  <div class="card card-cream">
+    <h3>En réunion, participante</h3>
+    <ul class="clean">
+      <li class="check">Structurée, orientée solution, sans parole inutile</li>
+      <li class="check">Humour au second degré, franc-parler assumé</li>
+      <li class="check">Exige un ordre du jour clair avec un objectif défini</li>
+    </ul>
+  </div>
+  <div class="card card-cream">
+    <h3>En réunion, animatrice</h3>
+    <ul class="clean">
+      <li class="check">Claire, efficace, inclusive</li>
+      <li class="check">Structure les échanges tout en laissant la place aux contributions</li>
+      <li class="cross">Les réunions sans structure sont une perte d'énergie</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Ce dont j'ai besoin de mes collègues et de mon équipe</h2>
+<ul class="clean">
+  <li class="check">Fiabilité et transparence : un "je n'ai pas eu le temps" vaut infiniment mieux que le silence</li>
+  <li class="check">Communication claire et factuelle, surtout sous pression</li>
+  <li class="check">Coopération réelle, responsabilité partagée, sans déresponsabilisation</li>
+  <li class="check">Sujets concrets et utiles, autonomie réelle, respect des temps de concentration</li>
+</ul>
+
+<h2>Comment me donner du feedback</h2>
+<div class="grid-2">
+  <div class="card card-cream">
+    <h3>Ce qui fonctionne</h3>
+    <ul class="clean">
+      <li class="check">À froid, de façon posée, précise et factuelle, avec des exemples concrets et des pistes claires</li>
+      <li class="check">Ni trop longtemps après les faits, ni dans l'instant émotionnel</li>
+      <li class="check">Feedback positif : en direct, sincère, même une phrase. Un message écrit personnalisé est apprécié</li>
+    </ul>
+  </div>
+  <div class="card card-cream">
+    <h3>Ce qui bloque</h3>
+    <ul class="clean">
+      <li class="cross">Commentaire sur la personnalité</li>
+      <li class="cross">Menaces voilées ou sous-entendus</li>
+      <li class="cross">Feedback donné dans l'urgence ou l'émotion</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Comment me valoriser</h2>
+<ul class="clean">
+  <li class="check">Confier des sujets complexes avec une vraie liberté d'action : c'est là que la valeur est maximale</li>
+  <li class="check">Reconnaître explicitement ce qui a été apporté : sur le projet, sur l'équipe, sur la dynamique</li>
+  <li class="check">Message écrit personnalisé pour les félicitations (la trace compte)</li>
+  <li class="check">Respecter le temps et les contraintes, faire confiance sur les sujets maîtrisés</li>
+</ul>
+
+<h2>Relation idéale avec mon manager (N+1)</h2>
+<div class="caption">Ce qui est décrit comme la meilleure expérience managériale est exactement le type de manager à incarner. Un modèle cohérent et authentique.</div>
+<ul class="clean">
+  <li class="check">Cadre clair et défini, combiné à une vraie autonomie au quotidien</li>
+  <li class="check">Exigeant et bienveillant : les deux ne sont pas incompatibles</li>
+  <li class="check">Clair sur les attentes, attentif au développement, à l'écoute du feedback ascendant</li>
+  <li class="check">Confiance, clarté, soutien bilatéral, humour : les ingrédients d'une relation durable</li>
+</ul>
+
+<h2>Ce que je ne veux plus jamais vivre</h2>
+<ul class="clean">
+  <li class="cross">Un manager flou, instable émotionnellement, qui change de position sans l'assumer</li>
+  <li class="cross">Le micromanagement sous toutes ses formes</li>
+  <li class="cross">La langue de bois, les non-dits, la confusion entretenue</li>
+</ul>
+
+<!-- PROFIL DISC -->
+<h1 id="disc">5 &middot; Profil comportemental</h1>
+
+<h2>Success Insights® DISC</h2>
+<div class="caption">Source : analyse comportementale DISC réalisée par Positis via TTI Success Insights Ltd (novembre 2022). Utilisé comme outil de connaissance de soi et de communication, pas comme étiquette définitive.</div>
+
+<div class="disc-styles">
+  <div class="disc-style-card">
+    <h4>Style naturel</h4>
+    <div class="style-val">Motivateur-Conducteur</div>
+    <div class="style-sub">Position 12 sur la roue</div>
+  </div>
+  <div class="disc-style-card">
+    <h4>Style adapté</h4>
+    <div class="style-val">Conducteur-Motivateur</div>
+    <div class="style-sub">Position 11 sur la roue</div>
+  </div>
+</div>
+
+<div class="disc-wrap">
+  <div class="disc-row">
+    <span class="disc-letter">D</span>
+    <span class="disc-name">Dominance</span>
+    <div class="disc-track"><div class="disc-fill" style="width:94%"></div></div>
+    <span class="disc-val">94 / 100</span>
+  </div>
+  <div class="disc-row">
+    <span class="disc-letter">I</span>
+    <span class="disc-name">Influence</span>
+    <div class="disc-track"><div class="disc-fill" style="width:88%"></div></div>
+    <span class="disc-val">88 / 100</span>
+  </div>
+  <div class="disc-row">
+    <span class="disc-letter">S</span>
+    <span class="disc-name">Stabilité</span>
+    <div class="disc-track"><div class="disc-fill" style="width:7%"></div></div>
+    <span class="disc-val">7 / 100</span>
+  </div>
+  <div class="disc-row">
+    <span class="disc-letter">C</span>
+    <span class="disc-name">Conformité</span>
+    <div class="disc-track"><div class="disc-fill" style="width:24%"></div></div>
+    <span class="disc-val">24 / 100</span>
+  </div>
+</div>
+
+<h2>En environnement de travail normal</h2>
+<p>Perçue comme : <strong>Volontaire &middot; Sûre de soi &middot; Positive &middot; Battante &middot; Décisive &middot; Innovatrice &middot; Tenace &middot; Autonome</strong></p>
+
+<h2>Ce que j'apporte à une organisation</h2>
+<ul class="clean">
+  <li class="check">Spontanéité et vision large, décisions orientées résultats</li>
+  <li class="check">Peu de temps morts, forte capacité à gérer des activités multiples en parallèle</li>
+  <li class="check">Sens de l'urgence (position 1 dans la hiérarchie comportementale)</li>
+  <li class="check">Grande faculté d'adaptation à des missions en évolution constante</li>
+  <li class="check">Capacité à initier le changement rapidement et à le faire aboutir</li>
+  <li class="check">Compétitivité et orientation vers les résultats, sans sacrifier la relation</li>
+</ul>
+
+<h2>Ce dont j'ai besoin pour être à mon plein potentiel</h2>
+<ul class="clean">
+  <li class="check">Un large éventail d'activités variées : la routine est le principal frein</li>
+  <li class="check">La liberté d'exprimer les idées et de challenger le statu quo</li>
+  <li class="check">Un manager qui prend des décisions rapides et ne reste pas dans le flou</li>
+  <li class="cross">Micromanagement et surveillance rapprochée</li>
+  <li class="check">Une équipe qui partage le sens de l'urgence et les niveaux d'exigence</li>
+  <li class="check">Du soutien administratif pour les tâches à faible valeur ajoutée</li>
+</ul>
+
+<h2>Comment me parler efficacement</h2>
+<div class="grid-2">
+  <div class="card card-cream">
+    <h3>Ce qui fonctionne</h3>
+    <ul class="clean">
+      <li class="check">Être clair, bref, précis : aller droit au but</li>
+      <li class="check">Arriver avec un dossier préparé, des faits, des options</li>
+      <li class="check">Proposer des alternatives plutôt que des opinions</li>
+      <li class="check">Formuler par écrit avec des échéances claires</li>
+    </ul>
+  </div>
+  <div class="card card-cream">
+    <h3>Ce qui ne fonctionne pas</h3>
+    <ul class="clean">
+      <li class="cross">Se répéter ou parler sans apporter d'information nouvelle</li>
+      <li class="cross">Adopter une posture paternaliste</li>
+      <li class="cross">Donner des directives sans explication</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Signaux de stress</h2>
+<div class="caption">Ces signaux sont à transmettre au manager pour une collaboration optimale.</div>
+<div class="stress-grid">
+  <div class="stress-card s1">
+    <h4>Pression modérée</h4>
+    <p>Exigeante, irritable, parfois perçue comme égocentrique.</p>
+  </div>
+  <div class="stress-card s2">
+    <h4>Pression forte</h4>
+    <p>Caustique, obstinée, rigide sur les positions.</p>
+  </div>
+  <div class="stress-card s3">
+    <h4>Signal d'alarme</h4>
+    <p>Si les réactions deviennent cassantes ou arbitraires, la pression dépasse ce qui est acceptable.</p>
+  </div>
+</div>
+
+<h2 id="processcom">Process Communication Model®</h2>
+<div class="caption">Source : analyse PCM réalisée en contexte professionnel (certifiée Process Com® Cegos, 2021). Le modèle décrit six types de personnalité structurés en "immeuble" : le type plancher (base) est le plus naturel, celui qu'on incarne sans effort. Les types des étages supérieurs sont accessibles mais coûtent davantage d'énergie. Les scores reflètent le niveau d'énergie disponible pour chaque type.</div>
+
+<div class="disc-styles">
+  <div class="disc-style-card">
+    <h4>Base (type prédominant)</h4>
+    <div class="style-val">Travaillomane</div>
+    <div class="style-sub">Logique &middot; Responsabilité &middot; Information factuelle</div>
+  </div>
+  <div class="disc-style-card">
+    <h4>Ressources fortes</h4>
+    <div class="style-val">Promoteur &middot; Rebelle</div>
+    <div class="style-sub">Action, impact, charme &middot; Humour, créativité, spontanéité</div>
+  </div>
+</div>
+
+<div class="disc-wrap">
+  <div class="disc-row">
+    <span class="disc-name" style="width:110px;font-weight:700;color:var(--text);">Travaillomane</span>
+    <div class="disc-track"><div class="disc-fill" style="width:100%"></div></div>
+    <span class="disc-val">100</span>
+  </div>
+  <div class="disc-row">
+    <span class="disc-name" style="width:110px;font-weight:700;color:var(--text);">Promoteur</span>
+    <div class="disc-track"><div class="disc-fill" style="width:90%"></div></div>
+    <span class="disc-val">90</span>
+  </div>
+  <div class="disc-row">
+    <span class="disc-name" style="width:110px;font-weight:700;color:var(--text);">Rebelle</span>
+    <div class="disc-track"><div class="disc-fill" style="width:75%"></div></div>
+    <span class="disc-val">75</span>
+  </div>
+  <div class="disc-row">
+    <span class="disc-name" style="width:110px;color:var(--muted);">Empathique</span>
+    <div class="disc-track"><div class="disc-fill" style="width:25%"></div></div>
+    <span class="disc-val">25</span>
+  </div>
+  <div class="disc-row">
+    <span class="disc-name" style="width:110px;color:var(--muted);">Persévérant</span>
+    <div class="disc-track"><div class="disc-fill" style="width:15%"></div></div>
+    <span class="disc-val">15</span>
+  </div>
+  <div class="disc-row">
+    <span class="disc-name" style="width:110px;color:var(--muted);">Rêveur</span>
+    <div class="disc-track"><div class="disc-fill" style="width:10%"></div></div>
+    <span class="disc-val">10</span>
+  </div>
+</div>
+
+<h2>Ce que ça dit en pratique</h2>
+<div class="grid-2">
+  <div class="card card-cream">
+    <h3>Travaillomane dominant (100)</h3>
+    <ul class="clean">
+      <li class="check">Communication naturelle par les faits, la logique et la démonstration</li>
+      <li class="check">Besoin de données fiables et de raisonnements structurés pour décider</li>
+      <li class="check">Valorise la compétence, la responsabilité, le travail bien fait</li>
+      <li class="check">Canal privilégié : informatif, faits vers faits, sans détours</li>
+    </ul>
+  </div>
+  <div class="card card-cream">
+    <h3>Promoteur &middot; Rebelle élevés (90 &middot; 75)</h3>
+    <ul class="clean">
+      <li class="check">Capacité à agir vite, à convaincre et à créer de l'impact (Promoteur)</li>
+      <li class="check">Humour, spontanéité et créativité relationnelle (Rebelle)</li>
+      <li class="check">Le registre Rebelle est un levier de connexion en facilitation et en management : il désarme, il crée du lien</li>
+      <li class="check">L'association Travaillomane-Promoteur-Rebelle génère une énergie peu commune pour transformer et embarquer</li>
+    </ul>
+  </div>
+</div>
+
+<div class="example-block">
+  <h3>Note de lecture : Empathique à 25, et pourtant</h3>
+  <p>Un score Empathique de 25 ne signifie pas que je manque de chaleur ou de care. Ça signifie que ce n'est pas mon canal spontané, celui que j'incarne sans effort. Mon mode naturel est factuel et direct, ce qui peut donner une première impression de froideur ou de distance. Je le sais, je le nomme, et je le travaille.</p>
+  <p style="margin-top:10px;">Le soin que j'apporte aux personnes passe par d'autres registres : la curiosité sincère pour ce que vit l'autre, le fait de mémoriser ce qui compte pour lui, la disponibilité dans les moments difficiles, l'humour comme langue commune. Une chaleur construite, délibérée, et souvent plus durable que la chaleur spontanée.</p>
+  <p style="margin-top:10px;font-size:9.5pt;color:var(--muted);font-style:italic;">C'est d'ailleurs pour ça que ces rôles de Mental Health Champion et Ambassadrice Handicap m'ont été confiés. Ces fonctions demandent de la stabilité, du discernement, et une écoute qui n'envahit pas.</p>
+</div>
+
+<!-- CE QUE J'AIME FAIRE -->
+<h1>6 &middot; Ce que j'aime faire</h1>
+<p class="muted">Ces activités sont sources d'énergie. Elles orientent directement la recherche de poste.</p>
+
+<ul class="clean">
+  <li class="check"><strong>Faire grandir les personnes</strong> : accompagner la montée en compétence, la confiance, le développement professionnel</li>
+  <li class="check"><strong>Le leadership servant</strong> : être au service de l'équipe, lever les obstacles, créer les conditions du succès collectif</li>
+  <li class="check"><strong>La facilitation et l'animation</strong> : structurer des échanges, faire émerger les décisions, rendre un groupe plus intelligent ensemble</li>
+  <li class="check"><strong>Le glue work</strong> : tisser les liens, assurer la cohérence, faire avancer les choses</li>
+  <li class="check"><strong>Les environnements dynamiques</strong> : là où il y a encore à construire, à transformer</li>
+  <li class="check"><strong>Le coaching et le mentorat</strong> : transmettre, accompagner, contribuer à d'autres parcours</li>
+  <li class="check"><strong>Travailler à l'interface technologie / humain</strong> : traduire, relier, donner du sens</li>
+  <li class="check"><strong>La coordination et la communication</strong> : les échanges constants avec collègues et parties prenantes</li>
+  <li class="check"><strong>Les sujets qui déclenchent un hyperfocus</strong> : explorer un processus inconnu, résoudre un problème complexe avec les bons entrants, construire un projet qui a vraiment du sens</li>
+</ul>
+
+<!-- CE QUE JE N'AIME PAS FAIRE -->
+<h1>7 &middot; Ce que je n'aime pas faire</h1>
+<p class="muted">Critères d'élimination lors de la recherche d'emploi. Rien n'est négociable ici.</p>
+
+<ul class="clean">
+  <li class="cross"><strong>La routine et les tâches répétitives</strong> : tout ce qui ne demande plus d'adaptation ni de réflexion</li>
+  <li class="cross"><strong>Les tâches sans sens</strong> : déconnectées d'un impact visible ou d'un objectif porteur</li>
+  <li class="cross"><strong>Le micromanagement</strong> : l'absence de confiance et d'autonomie est rédhibitoire</li>
+  <li class="cross"><strong>La pression sans soutien managérial</strong> : pression client couplée à un management interne défaillant, sans marge de manoeuvre ni protection de l'équipe</li>
+  <li class="cross"><strong>Les décisions qui sacrifient la qualité et les personnes aux apparences</strong> : prioriser la relation commerciale au détriment de l'équipe est une ligne rouge</li>
+</ul>
+
+<!-- MES VALEURS -->
+<h1>8 &middot; Mes valeurs</h1>
+<p class="muted">Ces valeurs permettent d'évaluer si un environnement correspond. Un désalignement fort est un signal d'alerte.</p>
+
+<div class="values-grid">
+  <div class="value-card">
+    <h4>Bienveillance</h4>
+    <p>Empathie, écoute active, relations positives et constructives. Pilier du management à exercer.</p>
+  </div>
+  <div class="value-card">
+    <h4>L'humain</h4>
+    <p>Les personnes avant les processus. Care et considération de chaque individu dans sa singularité.</p>
+  </div>
+  <div class="value-card">
+    <h4>L'inclusion</h4>
+    <p>Diversité comme richesse réelle, pas cosmétique. Sensibilité au handicap et à l'équité.</p>
+  </div>
+  <div class="value-card">
+    <h4>Pragmatisme</h4>
+    <p>Solutions concrètes et efficaces. Résultats plutôt que présentisme ou procédures pour les procédures.</p>
+  </div>
+  <div class="value-card">
+    <h4>Transparence</h4>
+    <p>Communication ouverte et honnête. Confiance au sein des équipes, sans politique.</p>
+  </div>
+  <div class="value-card">
+    <h4>Autonomie</h4>
+    <p>La liberté d'organisation et la confiance accordée sont des conditions de performance, pas des récompenses.</p>
+  </div>
+  <div class="value-card">
+    <h4>Sens</h4>
+    <p>Ce qui est fait doit contribuer à quelque chose de visible et qui compte.</p>
+  </div>
+</div>
+
+<!-- CONTRAINTES HANDICAP -->
+<h1>9 &middot; Contraintes Handicap et RQTH</h1>
+<div class="confidential">Section strictement confidentielle &middot; usage interne au processus de mentorat uniquement.</div>
+
+<h2>Aménagements requis</h2>
+<ul class="clean">
+  <li><strong>Télétravail flexible</strong> : contrat prévoyant du télétravail flexible ; préconisation médecine du travail possible à 100 % si besoin</li>
+  <li><strong>Poste aménagé RQTH</strong> : poste aménagé recommandé par la médecine du travail. Aménagement ergonomique du poste à domicile. Aménagement ergonomique sur site si présence requise. Intervention d'un ergothérapeute uniquement pour concevoir, adapter ou valider le poste si nécessaire. Bureau réglable en hauteur obligatoire.</li>
+  <li><strong>Zone de travail fixe sur site</strong> : toujours le même espace de travail, pas de flex-office ni de rotation</li>
+  <li><strong>Casque Bluetooth de qualité</strong> : pour se déplacer librement lors des réunions et appels</li>
+  <li><strong>Place de parking dédiée</strong> : aménagement RQTH ou avantage en nature, à négocier à l'embauche</li>
+  <li><strong>Flexibilité horaire</strong> : grande autonomie sur les horaires</li>
+  <li><strong>Congés pour soins</strong> : en plus des CP et RTT, à négocier dans les accords handicap</li>
+</ul>
+
+<div class="caption">Le temps de travail réduit (80 %, semaine de 4 jours) est une préférence, pas un non-négociable absolu. Si le poste et le salaire sont très bons, ce critère peut être revu.</div>
+
+<h2>Contraintes de déplacements</h2>
+<ul class="clean">
+  <li>Déplacements nationaux : 1 par mois maximum</li>
+  <li>Déplacements internationaux : 1 tous les 6 mois maximum</li>
+  <li class="cross">Postes à fort nomadisme : exclus</li>
+</ul>
+
+<h2>Stratégie employeur : priorité aux grands groupes</h2>
+<div class="example-block">
+  <p>Le choix de cibler les grandes entreprises est une décision stratégique directement liée à l'invalidité : meilleur package social, cellule handicap dédiée, aménagements plus faciles à négocier, et mobilité interne possible en cas d'évolution de la situation.</p>
+</div>
+
+<h2>Discours RQTH en entretien</h2>
+<div class="caption">Handicap moteur invisible. À l'aise pour annoncer la RQTH et les besoins d'aménagement. Approche proactive, cadrée et rassurante pour l'employeur.</div>
+<ul class="clean">
+  <li class="check">Annonce sans hésitation la RQTH et les besoins d'aménagement</li>
+  <li class="check">Cadre immédiatement sur les capacités : rassurer l'employeur sur la capacité à se déplacer et à produire</li>
+  <li class="check">Ne mentionne pas les potentielles aggravations futures</li>
+  <li class="check">Précise qu'il s'agit d'un handicap moteur invisible</li>
+</ul>
+
+<!-- CULTURE D'ENTREPRISE IDEALE -->
+<h1>10 &middot; Culture d'entreprise idéale</h1>
+<p class="muted">Cette grille sert à qualifier les opportunités et à préparer les questions d'entretien.</p>
+
+<div class="grid-2">
+  <div class="card card-cream">
+    <h3>Critères recherchés</h3>
+    <ul class="clean">
+      <li class="check">Culture bienveillante, sécurité psychologique réelle</li>
+      <li class="check">Inclusion réelle, accord handicap actif</li>
+      <li class="check">Autonomie et management par la confiance</li>
+      <li class="check">Flexibilité : télétravail, horaires, 4 jours</li>
+      <li class="check">Management à impact, sens partagé</li>
+      <li class="check">Environnement dynamique, sujets à construire</li>
+      <li class="check">Sécurité psychologique dans l'équipe</li>
+    </ul>
+  </div>
+  <div class="card card-cream">
+    <h3>Critères rédhibitoires</h3>
+    <ul class="clean">
+      <li class="cross">Micromanagement ou culture du contrôle</li>
+      <li class="cross">Présentisme obligatoire / zéro télétravail</li>
+      <li class="cross">Flex-office (pas de zone de travail fixe)</li>
+      <li class="cross">Déplacements fréquents incompatibles</li>
+      <li class="cross">Absence d'accord handicap / inclusion de façade</li>
+      <li class="cross">Bureaucratie figée, processus sans sens</li>
+      <li class="cross">Pression sans soutien managérial</li>
+    </ul>
+  </div>
+</div>
+<ul class="clean">
+  <li class="check">Grands groupes, chez le client final (DSI de préférence)</li>
+  <li class="check">Secteur : CRM/CX cross-sectoriel, transport, luxe, industrie, retail, tech, ESS, santé &middot; Banque/assurance envisageable si télétravail complet garanti</li>
+  <li class="cross">Exclu : secteur public &middot; Armement / secret défense</li>
+</ul>
+
+<!-- TRAJECTOIRE -->
+<h1>11 &middot; Trajectoire et postes cibles</h1>
+
+<div class="banner">
+  <p><strong>Cibles confirmées</strong></p>
+  <p>1. Manager d'équipe opérationnel, avec des collaborateurs en direct à faire grandir, arbitrer, protéger.</p>
+  <p>2. Chez le client final, priorité à un poste en DSI ou direction métier, hors ESN.</p>
+  <p style="margin-top:8px;opacity:0.85;font-style:italic;">Avec une influence réelle sur les pratiques d'organisation, sans se cantonner à un rôle RH ou People &amp; Culture.</p>
+</div>
+
+<h2>Mes trois horizons</h2>
+
+<div class="horizons">
+  <div class="horizon-card">
+    <div class="horizon-num">Horizon 1 &middot; Court terme</div>
+    <h4>Exit strategy</h4>
+    <p>Sortie de CGI post-rétablissement 2026. Gap de 1 à 2 mois. Premier poste de manager opérationnel chez le client final.</p>
+  </div>
+  <div class="horizon-arrow">&rsaquo;</div>
+  <div class="horizon-card">
+    <div class="horizon-num">Horizon 2 &middot; 2 à 4 ans</div>
+    <h4>Manager de managers</h4>
+    <p>Périmètre élargi, responsable de service ou Directrice adjointe DSI.</p>
+  </div>
+  <div class="horizon-arrow">&rsaquo;</div>
+  <div class="horizon-card">
+    <div class="horizon-num">Horizon 3 &middot; Vision long terme</div>
+    <h4>Autonomie &amp; transmission</h4>
+    <p>Temps partiel, à distance. Management, mentorat, coaching, conférences sur ce qui compte.</p>
+  </div>
+</div>
+
+<h2>Horizon 1 &middot; Court terme : exit strategy en cours</h2>
+<div class="example-block">
+  <p>Rester chez CGI le temps qu'il faut, pour des raisons de santé et de rétablissement. Partir avec l'énergie et la lucidité requises. Ce n'est pas une fuite : c'est une sortie construite, sur fond de rachat par Apside, d'augmentations dégradées et d'engagements non tenus. Un départ qui s'impose comme une évidence stratégique.</p>
+</div>
+<ul class="clean">
+  <li class="check">Recommandations LinkedIn collectées, dont une de <span class="client-name">Pierre-Yves Ollivier</span>, N+2 et ancien VP du centre de compétences (désormais indépendant)</li>
+  <li class="check">Mentorat professionnel actif, accompagnement structuré sur la trajectoire</li>
+  <li class="check">Deux coachings en parallèle : carrière et développement personnel &middot; communication</li>
+  <li class="check">Inventaire de carrière construit : ce document</li>
+</ul>
+<ul class="clean" style="margin-top:14px;">
+  <li><strong>Rémunération : 65 000 € brut/an minimum</strong>, hors package. Non négociable à la baisse.</li>
+  <li><strong>Place de parking dédiée</strong>, non négociable.</li>
+  <li><strong>Gap entre les deux postes : 1 à 2 mois</strong> : repos, développement du projet Miaoucratie, voyages.</li>
+</ul>
+
+<h2>Horizon 2 &middot; Moyen terme (2 à 4 ans)</h2>
+<div class="banner">
+  <p><strong>Cible moyen terme : Manager de managers</strong></p>
+  <p>Une fois le premier poste de manager opérationnel bien ancré, la trajectoire naturelle est de prendre un périmètre plus large : encadrer des managers plutôt que seulement des collaborateurs.</p>
+</div>
+<ul class="clean">
+  <li>Manager de managers / Responsable de service, périmètre élargi</li>
+  <li>Directrice adjointe d'une DSI ou d'une direction opérationnelle, horizon naturel à 3-4 ans</li>
+</ul>
+
+<h2>Horizon 3 &middot; Vision long terme</h2>
+<div class="quote" style="font-style:normal;">
+  <p>Dans dix ans, dans le meilleur des cas, travailler à temps partiel et à distance, depuis le lieu choisi. Partager le temps entre le management, le mentorat et le coaching, et l'animation d'ateliers sur des sujets passionnants. Se déplacer parfois pour donner des conférences. Explorer les sujets qui importent : relations hiérarchiques, différences culturelles, feedback, greenwashing managérial, l'importance du glue work, les biais genrés dans l'informatique, les biais de l'inclusion. Le fil conducteur : comprendre et améliorer la façon dont les humains travaillent ensemble.</p>
+</div>
+
+<h2>Postes cibles : management opérationnel, chez le client final</h2>
+<div class="caption">Ces intitulés ciblent la responsabilité directe d'une équipe, en DSI ou direction métier (hors ESN). La double expertise technique et humaine est un avantage rare et concret.</div>
+
+<div class="grid-2">
+  <div class="card card-cream">
+    <h3>Coeur de cible</h3>
+    <ul class="clean">
+      <li><strong>Responsable d'équipe IT / Manager IT</strong> : manager une équipe de CP, BA, architectes ou PO en DSI</li>
+      <li><strong>Delivery Manager interne</strong> : piloter la livraison IT avec une équipe dédiée</li>
+      <li><strong>Responsable MOE/MOA senior</strong> : encadrement d'une équipe MOA/MOE, fort background CRM/architecture</li>
+      <li><strong>Head of CX / Responsable Expérience Client</strong> : manager une équipe CX</li>
+    </ul>
+  </div>
+  <div class="card card-cream">
+    <h3>Avec composante transverse</h3>
+    <ul class="clean">
+      <li><strong>Responsable Transformation / Change Manager senior</strong> : piloter des transformations à forte dimension humaine</li>
+      <li><strong>Chief of Staff</strong> : coordination stratégique au sein d'une DSI ou d'une DG</li>
+    </ul>
+    <h3 style="margin-top:16px;">Points à confirmer</h3>
+    <ul class="clean">
+      <li>Taille d'équipe : jusqu'à 10 personnes si management complet</li>
+      <li>Profil player-manager assumé : manager et avoir du fond</li>
+      <li class="cross">Secteurs exclus : secteur public &middot; Armement / secret défense</li>
+      <li>Banque/assurance : envisageable si télétravail complet garanti</li>
+    </ul>
+  </div>
+</div>
+
+<!-- VERBATIMS -->
+<h1>Annexe &middot; Verbatims de recommandations</h1>
+<div class="caption">Ces extraits sont issus de recommandations réelles, rédigées par des managers, des pairs et des personnes managées. Ce ne sont pas des auto-déclarations : ce sont des faits mobilisables en entretien ou sur LinkedIn.</div>
+
+<h2>De managers</h2>
+
+<div class="quote">
+  "Rôle de manager de proximité assuré avec conviction et dynamisme. Irina a été moteur et impliquée pour suivre l'équipe CCaaS en l'absence longue durée de son N+1. Elle sait instaurer un climat de confiance et son leadership est réel."
+  <span class="source">Directeur Conseil Delivery, N+1 (revue de performance 2025)</span>
+</div>
+
+<div class="quote">
+  "L'évaluation 'Surpasse les attentes' reflète précisément cette contribution exceptionnelle : leadership affirmé dans le pilotage transverse de l'équipe CCaaS (environ 25 personnes), avec maintien du cadre opérationnel. Capacité à instaurer un climat de confiance et à assurer une continuité managériale dans des conditions inhabituelles. Implication au-delà du périmètre initial, incluant la posture de Mental Health Champion et la prise en charge de tâches RH critiques."
+  <span class="source">Directeur Conseil Delivery, N+1 (revue de performance 2025)</span>
+</div>
+
+<div class="quote">
+  "Tes interventions sur la sécurisation des avant-ventes Dynamics 365 Contact Center pour <span class="client-name">Air Liquide</span>, <span class="client-name">Delta Dore</span>, <span class="client-name">Hi-Fi Filter</span> et le POC IA sont appréciées et démontrent une volonté de contribuer au-delà du périmètre initial."
+  <span class="source">Directeur Conseil Delivery, N+1 (revue de performance 2025)</span>
+</div>
+
+<div class="quote">
+  "Véritable couteau suisse à la croisée des chemins entre consulting et pilotage de projets. Très orientée résultats, elle sait faire bouger les choses et embarquer ses équipes comme son management."
+  <span class="source">Manager / Directeur</span>
+</div>
+
+<div class="quote">
+  "Son aisance naturelle à l'oral, son charisme l'ont amenée à prendre des responsabilités de pilotage et de management, ce qui me semble aller de soi."
+  <span class="source">Manager / Encadrant (2020-2022)</span>
+</div>
+
+<div class="quote">
+  "Irina a un don pour éviter les problèmes de communication. C'est fluide, limpide... une sacrée garantie de résultat."
+  <span class="source">Manager / Client</span>
+</div>
+
+<h2>De personnes managées, les plus révélatrices</h2>
+
+<div class="quote">
+  "Ton talent pour accompagner, inspirer l'empathie et susciter la confiance. Ton engagement envers le développement des compétences a créé un environnement propice à la croissance. Ta résilience et ta détermination ont été source d'inspiration pour toute l'équipe. Travailler sous ta direction a été une expérience formatrice et motivante qui restera gravée dans ma carrière professionnelle."
+  <span class="source">Collaboratrice directe</span>
+</div>
+
+<div class="quote">
+  "Elle incarne un véritable leadership. Elle sait fédérer les équipes autour des objectifs. Sa capacité à anticiper les risques, à prendre des décisions rapides et à arbitrer efficacement permet aux projets d'avancer sereinement et dans les délais."
+  <span class="source">Collaborateur direct (projets Contact Center)</span>
+</div>
+
+<div class="quote">
+  "Irina est une très bonne cheffe de projet, qui sait trouver le bon équilibre entre autonomie et pilotage. Elle laisse de la liberté à ses équipes, tout en gardant une vision claire. Elle instaure un cadre de confiance tout en restant disponible et à l'écoute. Son franc-parler est un vrai atout."
+  <span class="source">Collaborateur direct</span>
+</div>
+
+<div class="quote">
+  "Ta transparence constitue un véritable atout. Elle favorise un échange constructif et permet d'aborder plus concrètement les perspectives d'évolution."
+  <span class="source">Collaboratrice directe</span>
+</div>
+
+<hr>
+<p class="footer">Document de mentorat professionnel &nbsp;&middot;&nbsp; Confidentiel &nbsp;&middot;&nbsp; Version : Avril 2026 v7</p>
+
+</body>
+</html>
